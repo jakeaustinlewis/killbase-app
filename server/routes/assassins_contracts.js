@@ -3,61 +3,56 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
 
-router.get('/assassins', (req, res, next) => {
-    knex('assassins')
+router.get('/assassins_contracts', (req, res, next) => {
+    knex('assassins_contracts')
         .orderBy('id')
-        .then((assassins) => {
-            res.send(assassins);
+        .then((assassins_contracts) => {
+            res.send(assassins_contracts);
         })
         .catch((err) => {
             next(err);
         });
 });
 
-router.get('/assassins/:id', (req, res, next) => {
-    knex('assassins')
+router.get('/assassins_contracts/:id', (req, res, next) => {
+    knex('assassins_contracts')
         .where('id', req.params.id)
         .first()
-        .then((assassins) => {
-            if (!assassins) {
+        .then((assassins_contracts) => {
+            if (!assassins_contracts) {
                 return next();
             }
-            res.send(assassins);
+            res.send(assassins_contracts);
         })
         .catch((err) => {
             next(err);
         });
 });
 
-router.post('/assassins', (req, res, next) => {
-    knex('assassins')
+router.post('/assassins_contracts', (req, res, next) => {
+    knex('assassins_contracts')
         .insert({
-            full_name: req.body.full_name,
-            weapon: req.body.weapon,
-            contact_info: req.body.contact_info,
-            age: req.body.age,
-            price: req.body.price,
-            rating: req.body.rating,
-            kills: req.body.kills
+            assassins_id: req.body.assassins_id,
+            contracts_id: req.body.contracts_id
         }, '*')
-        .then((assassins) => {
-            res.send(assassins[0]);
+        .then((assassins_contracts) => {
+            res.send(assassins_contracts[0]);
         })
         .catch((err) => {
             next(err);
         });
 });
 
-router.patch('/assassins/:id', (req, res, next) => {
-    knex('assassins')
+router.patch('/assassins_contracts/:id', (req, res, next) => {
+    knex('assassins_contracts')
         .where('id', req.params.id)
         .first()
-        .then((assassin) => {
-            if (!assassin) {
+        .then((assassins_contract) => {
+            if (!assassins_contract) {
                 return next();
             }
 
-            return knex('assassins')
+            return knex('assassins_contracts')
                 .update({
                     full_name: req.body.full_name,
                     weapon: req.body.weapon,
@@ -69,18 +64,18 @@ router.patch('/assassins/:id', (req, res, next) => {
                 }, '*')
                 .where('id', req.params.id);
         })
-        .then((assassins) => {
-            res.send(assassins[0]);
+        .then((assassins_contracts) => {
+            res.send(assassins_contracts[0]);
         })
         .catch((err) => {
             next(err);
         });
 });
 
-router.delete('/assassins/:id', (req, res, next) => {
-    let assassin;
+router.delete('/assassins_contracts/:id', (req, res, next) => {
+    let assassins_contract;
 
-    knex('assassins')
+    knex('assassins_contracts')
         .where('id', req.params.id)
         .first()
         .then((row) => {
@@ -88,15 +83,15 @@ router.delete('/assassins/:id', (req, res, next) => {
                 return next();
             }
 
-            assassin = row;
+            assassins_contract = row;
 
-            return knex('assassins')
+            return knex('assassins_contracts')
                 .del()
                 .where('id', req.params.id);
         })
         .then(() => {
-            delete assassin.id;
-            res.send(assassin);
+            delete assassins_contract.id;
+            res.send(assassins_contract);
         })
         .catch((err) => {
             next(err);

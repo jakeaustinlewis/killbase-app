@@ -16,19 +16,20 @@ let assassins = require('./routes/assassins');
 // let assassins_contracts = require('./routes/assassins_contracts');
 
 
-app.disable('x-powered-by');
-// app.disable('x-powered-by'); //Sets the Boolean setting name to false
+app.disable('x-powered-by');  //Sets the Boolean setting name to false
+
 app.use(morgan('short')); 
-app.use(bodyParser.json()); //tells the system that you want json to be used
+app.use(bodyParser.json()); //tells the system that you want json to be used ------- WHYYYYYYYYYYYYYYYYYYYYYYYYYYYY
 
 
 app.use(express.static(path.join('public')));
 
 app.use(assassins);
-// app.use('clients');
-// app.use('targets');
-// app.use('contracts');
-// app.use('assassins_contracts');
+// app.use(code_names);
+// app.use(clients);
+// app.use(targets);
+// app.use(contracts);
+// app.use(assassins_contracts);
 
 app.use((req, res) => {
     re.sendStatus(404);
