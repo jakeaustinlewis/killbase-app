@@ -1,0 +1,182 @@
+body {
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222; 
+  }
+  h1, h2, h3 {
+      margin: 0px;
+  }
+  
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: #1E1E1E;
+  }
+
+.white-text {
+    color: white;
+}
+/* .flex {
+    display: flex;
+    justify-content: flex-start;
+} */
+#navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    width: 100%;
+    background-color: #2D2D2D;
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    #navBar{
+        display: flex;
+        justify-content: center;
+        height: 75px;
+        width: 100%;
+        background-color: #2D2D2D;
+        color: white;
+    }
+}
+#navBar > a {
+    display: flex;
+    align-items: center;
+}
+
+.flexNav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0px 40px 0px 0px;
+}
+
+.flexNav a {
+    margin: 0px 10px;
+}
+
+.flexNav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navBar h1{
+    margin: 0px 0px 0px 10px;
+}
+
+#navBar img {
+    margin: 0px 0px 0px 20px;
+    width: 70px;
+    height: 70px;
+}
+
+.logoTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 40px 0px 0px 20px;
+    flex-wrap: wrap;
+}
+
+
+@media (max-width: 1000px) {
+    .main-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        margin: 40px 0px 0px 20px;
+        flex-wrap: wrap;
+    }
+}
+
+.assassins-logo {
+    width: 500px;
+    height: 550px;
+}
+
+.contract-logo {
+    width: 550px;
+    height: 550px;
+}
+
+/*           assassins.html specific            */
+#assassins-container  h2 {
+    margin: 35px 0px 15px 0px;
+}
+
+
+#assassins-container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box; 
+}
+  
+  /* For devices larger than 400px */
+  @media (min-width: 400px) {
+    #assassins-container {
+      width: 85%;
+      padding: 0; }
+  }
+  
+  /* For devices larger than 550px */
+  @media (min-width: 550px) {
+    #assassins-container {
+      width: 80%; }
+    .column,
+    .columns {
+      margin-left: 4%; }
+    .column:first-child,
+    .columns:first-child {
+      margin-left: 0; }
+}
+
+.assassinProfile{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.assassinPicAndInfo {
+    display: flex;
+}
+
+.icons {
+    display: flex;
+}
+.icons i{
+    margin: 0px 10px;
+}
+
+.iconFlex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.assassinProfile img {
+    width: 150px;
+    height: 150px;
+}
+
+.assassinProfile h3 {
+    margin: 0px 0px 0px 20px;
+}
+
+
+
