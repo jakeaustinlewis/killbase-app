@@ -33,7 +33,7 @@ router.post('/code_names', (req, res, next) => {
     knex('code_names')
         .insert({
             code_name: req.body.code_name,
-            assassins_id: assassins_id
+            assassins_id: req.body.assassins_id
         }, '*')
         .then((code_names) => {
             res.send(code_names[0]);
@@ -55,7 +55,7 @@ router.patch('/code_names/:id', (req, res, next) => {
             return knex('code_names')
                 .update({
                     code_name: req.body.code_name,
-                    assassins_id: assassins_id
+                    assassins_id: req.body.assassins_id
                 }, '*')
                 .where('id', req.params.id);
         })
@@ -78,7 +78,7 @@ router.delete('/code_names/:id', (req, res, next) => {
                 return next();
             }
 
-            assassin = row;
+            code_name = row;
 
             return knex('code_names')
                 .del()

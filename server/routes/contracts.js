@@ -78,7 +78,7 @@ router.delete('/contracts/:id', (req, res, next) => {
         .then((row) => {
             if (!row) {
                 return next();
-            }
+            } 
 
             contract = row;
 

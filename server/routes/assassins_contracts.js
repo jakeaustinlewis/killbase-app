@@ -54,13 +54,8 @@ router.patch('/assassins_contracts/:id', (req, res, next) => {
 
             return knex('assassins_contracts')
                 .update({
-                    full_name: req.body.full_name,
-                    weapon: req.body.weapon,
-                    contact_info: req.body.contact_info,
-                    age: req.body.age,
-                    price: req.body.price,
-                    rating: req.body.rating,
-                    kills: req.body.kills
+                    assassins_id: req.body.assassins_id,
+                    contracts_id: req.body.contracts_id
                 }, '*')
                 .where('id', req.params.id);
         })
