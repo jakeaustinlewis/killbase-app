@@ -25,6 +25,11 @@ body {
     display: flex;
     justify-content: flex-start;
 } */
+
+/* .flexEnd {
+    display: flex;
+    justify-content: flex-end;
+} */
 #navBar{
     display: flex;
     align-items: center;
@@ -45,6 +50,14 @@ body {
         color: white;
     }
 }
+.navBar {
+    height:75px;
+}
+
+.navBar > a {
+    font-size: 40px;
+}
+
 #navBar > a {
     display: flex;
     align-items: center;
@@ -104,13 +117,13 @@ body {
 }
 
 .assassins-logo {
-    width: 500px;
-    height: 550px;
+    width: 400px;
+    height: 450px;
 }
 
 .contract-logo {
-    width: 550px;
-    height: 550px;
+    width: 450px;
+    height: 450px;
 }
 
 /*           assassins.html specific            */
@@ -119,24 +132,31 @@ body {
 }
 
 
+
+
 #assassins-container {
     position: relative;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
+    width: 80%;
+    /* max-width: 960px; */
+    margin: 30px auto 0px auto;
+    /* display: flex;
+    justify-content: center; */
     padding: 0 20px;
     box-sizing: border-box; 
+
+
 }
-  
+
+
   /* For devices larger than 400px */
-  @media (min-width: 400px) {
+  @media (max-width: 400px) {
     #assassins-container {
       width: 85%;
       padding: 0; }
   }
   
   /* For devices larger than 550px */
-  @media (min-width: 550px) {
+  @media (max-width: 550px) {
     #assassins-container {
       width: 80%; }
     .column,
