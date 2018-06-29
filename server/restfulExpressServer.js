@@ -19,7 +19,7 @@ app.disable('x-powered-by');  //Sets the Boolean setting name to false
 
 app.use(morgan('short')); 
 app.use(bodyParser.json()); //tells the system that you want json to be used ------- WHYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join('public')));
 
@@ -31,7 +31,7 @@ app.use(contracts);
 app.use(assassins_contracts);
 
 app.use((req, res) => {
-    re.sendStatus(404);
+    res.sendStatus(404);
 });
 
 app.use((err, req, res, next) => {
