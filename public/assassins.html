@@ -17,34 +17,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="killbase.css">
 
-
-</head>
-
 </head>
 
 <body class="white-text">
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d2d2d;">
-                <a class="navbar-brand" href="./index.html">
-                    <img src="../logos/killbase_logo.png" width="60" height="60" class="d-inline-block align-top" alt=""> KILLBASE
-                </a>
-        
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-            
-                            <li class="nav-item">
-                                <a class="nav-link" href="./assassins.html">Assassins</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./contracts.html">Contracts</a>
-                            </li>
-                    </ul>
-                </div>
-            </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d2d2d;">
+        <a class="navbar-brand" href="./index.html">
+            <img src="../logos/killbase_logo.png" width="60" height="60" class="d-inline-block align-top" alt=""> KILLBASE
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./assassins.html">Assassins</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contracts.html">Contracts</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- <nav id="navBar">
         <a class="white-text" href="./index.html">
@@ -64,14 +61,27 @@
                 <hr style="border-color: white;">
             </h2>
 
-            <section class="assassinProfile">
+            <section class="assassinProfiles">
 
-                <section class="assassinPicAndInfo">
-                    <img src="https://goo.gl/LCquZj" alt="assassin1">
-                    <h3>Assassin One</h3>
+                <section id="assassinPicAndInfo">
+                    <!-- <img src="https://goo.gl/LCquZj" alt="assassin1"> -->
+                    <!-- <h3>Assassin One</h3> -->
                 </section>
 
-                <section class="icons">
+                <section id="assassinButtons">
+
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option1" autocomplete="off"> Edit
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> Delete
+                        </label>
+                    </div>
+
+                </section>
+
+                <!-- <section class="icons">
                     <section class="iconFlex">
                         <i class="material-icons">edit</i>
                         <p>Edit</p>
@@ -80,7 +90,7 @@
                         <i class="material-icons">delete</i>
                         <p>Delete</p>
                     </section>
-                </section>
+                </section> -->
 
             </section>
         </section>
@@ -88,11 +98,11 @@
 
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

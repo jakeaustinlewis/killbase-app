@@ -151,7 +151,7 @@ body {
   /* For devices larger than 400px */
   @media (max-width: 400px) {
     #assassins-container {
-      width: 85%;
+      width: 80%;
       padding: 0; }
   }
   
@@ -167,19 +167,24 @@ body {
       margin-left: 0; }
 }
 
-.assassinProfile{
+.assassinProfiles{
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
 }
-.assassinPicAndInfo {
+#assassinPicAndInfo {
     display: flex;
 }
 
-.icons {
+#assassinButtons {
     display: flex;
+    height: 50px;
 }
-.icons i{
+
+.assassinButtonParams {
+    margin: 0px 10px;
+}
+#icons i{
     margin: 0px 10px;
 }
 
@@ -189,14 +194,12 @@ body {
     align-items: center;
 }
 
-.assassinProfile img {
+.assassinProfiles img {
     width: 150px;
     height: 150px;
+    
 }
 
 .assassinProfile h3 {
     margin: 0px 0px 0px 20px;
 }
-
-
-

@@ -15,11 +15,11 @@ let targets = require('./routes/targets');
 let contracts = require('./routes/contracts');
 let assassins_contracts = require('./routes/assassins_contracts');
 
-
 app.disable('x-powered-by');  //Sets the Boolean setting name to false
 
 app.use(morgan('short')); 
 app.use(bodyParser.json()); //tells the system that you want json to be used ------- WHYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join('public')));
 
