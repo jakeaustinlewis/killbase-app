@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         .then(response => response.json())
         .then(data => {
 
+
             console.log(data);
             // let myPhotos = document.getElementById('myPhotos'); //my Photos is a section containing the populated photos
             // let assassinsArray = data.assassins;
@@ -36,7 +37,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         function populateEditButton() {
-            let editButton = document.createElement("");
+            let buttonGroup = document.createElement("div");
+            buttonGroup.classList.add('btn-group btn-group-toggle');
+            buttonGroup.setAttribute('data-toggle', 'buttons');
+            assassinButtons.append(buttonGroup);
+            // populateEditButtonLabel(buttonGroup);
+            EditButtonLabel();
+            // function populateEditButtonLabel(buttonGroup) {
+
+                function EditButtonLabel() {
+                    let editLabel = document.createElement('label');
+                    editLabel.classList.add('btn btn-secondary');
+                    buttonGroup.append('editLabel');
+
+                    function EditButtonInput() {
+                        editButtonInput = document.createElement('input');
+                        editButtonInput.setAttribute('type', 'radio')
+                    }
+
+                
+
+            }
+            
+
+            assassinButtons.append();
+
+            let editButton = document.createElement("label");
+            editButton.style.backgroundColor('#e59500');
+
 
 
 
