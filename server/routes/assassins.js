@@ -2,6 +2,13 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
+const path = require('path');
+
+
+router.get('/listAssassins', (req, res, next) => {
+    let assassinsFile = path.join(__dirname, '..', '..', 'public', 'assassins.html');
+    res.sendFile(assassinsFile);
+});
 
 router.get('/assassins', (req, res, next) => {
     knex('assassins')

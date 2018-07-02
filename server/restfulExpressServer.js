@@ -15,11 +15,20 @@ let targets = require('./routes/targets');
 let contracts = require('./routes/contracts');
 let assassins_contracts = require('./routes/assassins_contracts');
 
-app.disable('x-powered-by');  //Sets the Boolean setting name to false
+app.disable('x-powered-by'); //Sets the Boolean setting name to false
 
-app.use(morgan('short')); 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+
+app.use(morgan('short'));
 app.use(bodyParser.json()); //tells the system that you want json to be used ------- WHYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.use(express.static(path.join('public')));
 
@@ -37,17 +46,17 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
     if (err.status) {
         return res
-        .status(err.status)
-        .set('Content-Type', 'text/plain')
-        .send(err.message);
+            .status(err.status)
+            .set('Content-Type', 'text/plain')
+            .send(err.message);
     }
 
     console.error(err.stack);
     res.sendStatus(500);
 });
 
-app.listen(port, function() {
-  console.log('Listening on port', port);
+app.listen(port, function () {
+    console.log('Listening on port', port);
 });
 
 module.exports = app;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Personal Website</title>
-    <script defer src="newAssassin.js"></script>
+    <script defer src="editContract.js"></script>
 
     <!-- Compiled and minified CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
@@ -51,70 +51,62 @@
             <form>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
-                        <label for="inputName">Name</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="">
+                        <label for="inputTargetName">Target Name</label>
+                        <input type="text" class="form-control" id="inputTargetName" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputAge">Age</label>
-                        <input type="text" class="form-control" id="inputAge" placeholder="">
+                        <label for="inputSecurityLevel">Security Level</label>
+                        <input type="text" class="form-control" id="inputSecurityLevel" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
-                        <label for="inputCodeNames">Codenames</label>
-                        <input type="text" class="form-control" id="inputCodeNames" placeholder="">
+                        <label for="inputTargetLocation">Target Location</label>
+                        <input type="text" class="form-control" id="inputTargetLocation" placeholder="">
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputPrice">Price</label>
-                        <input type="text" class="form-control" id="inputPrice" placeholder="">
+                    <div class="form-group col-md-2 justify-content-center">
+                        <label for="inputBudget">Budget</label>
+                        <input type="text" class="form-control" id="inputBudget" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
-                        <label for="inputImageURL">Profile Image URL</label>
+                        <label for="inputTargetImageURL">Target Image URL</label>
                         <input type="text" class="form-control" id="inputImageURL" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="inputRating">Rating</label>
-                        <input type="password" class="form-control" id="inputRating" placeholder="">
-                    </div>
-                </div>
-
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-6">
-                        <label for="inputWeaponOfChoice">Weapon of Choice</label>
-                        <input type="text" class="form-control" id="inputWeaponOfChoice" placeholder="">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputKills">Kills</label>
-                        <input type="text" class="form-control" id="inputKills" placeholder="">
-                    </div>
-                </div>
-
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-6">
-                        <label for="inputContactInfo">Contact Info</label>
-                        <input type="email" class="form-control" id="inputContactInfo" placeholder="">
-                    </div>
-                    <div class="form-group col-md-2">
 
                     </div>
                 </div>
 
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-4">
+                        <label for="sel1">Client</label>
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4"></div>
+                </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
-                        <button type="submit" class="btn btn-primary">Add Assassin</button>
+                        <button type="submit" class="btn btn-primary">Edit Contract</button>
                     </div>
                     <div class="form-group col-md-2">
 
                     </div>
                 </div>
+
             </form>
 
         </section>
+
 
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
