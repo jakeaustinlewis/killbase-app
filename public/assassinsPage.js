@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let image = document.createElement('img');
         image.src = "https://goo.gl/LCquZj";
         image.alt = "assassin1";
+        image.style.cssText = `height: 150px; width: 150px;`;
         assassinPicAndInfo.append(image);
     }
 

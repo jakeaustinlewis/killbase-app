@@ -69,11 +69,11 @@ body {
 }
 
 /*           assassins.html specific            */
-.assassins-container  h2 {
+.body-container  h2 {
     margin: 35px 0px 15px 0px;
 }
 
-.assassins-container {
+.body-container {
     position: relative;
     width: 80%;
     /* max-width: 960px; */
@@ -87,14 +87,14 @@ body {
 
   /* For devices larger than 400px */
   @media (max-width: 400px) {
-    .assassins-container {
+    .body-container {
       width: 80%;
       padding: 0; }
   }
   
   /* For devices larger than 550px */
   @media (max-width: 550px) {
-    .assassins-container {
+    .body-container {
       width: 80%; }
     .column,
     .columns {
@@ -104,11 +104,7 @@ body {
       margin-left: 0; }
 }
 
-/* #assassinProfiles{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-} */
+
 
 
 
@@ -125,18 +121,3 @@ body {
     align-items: center;
 }
 
-#assassinProfiles img {
-    width: 150px;
-    height: 150px;
-    
-}
-
-#assassinProfile h3 {
-    margin: 0px 0px 0px 20px;
-}
-
-#contractSection {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-}
