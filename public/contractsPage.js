@@ -1,23 +1,22 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     let contractSection = document.getElementById('contractSection');
 
-
-    function elementMaker(parentElement, elementType, styling) {
+    function elementMaker(parentElement, elementType, elemClass) {
         let element = document.createElement(elementType);
-        element.style.cssText = styling;
+        element.classList.add(elemClass);
         parentElement.append(element);
         return element;
     }
 
     function populateImage(contractContainer) {
-        let image = elementMaker(contractContainer, `img`, `height: 150px; width: 150px;`);
+        let image = elementMaker(contractContainer, `img`, `imgSizing`); 
         image.src = "https://goo.gl/LCquZj";
         image.alt = "contract1";
     }
 
-    function contractInfo(contractContainer, contractName, clientName, target_location, budget, security_level) {
-        let contractInfoContainer = elementMaker(contractContainer, `section`, `margin-left: 30px;`);
-        let contractTitle = elementMaker(contractInfoContainer, `h3`, `margin-bottom: 15px`);
+    function populateContractInfo(contractContainer, contractName, clientName, target_location, budget, security_level) {
+        let contractInfoContainer = elementMaker(contractContainer, `section`, `infoContainer`); //infoContainer
+        let contractTitle = elementMaker(contractInfoContainer, `h3`, `infoTitle`);
         populateContractName(contractTitle, contractName);
 
         populateStat(contractInfoContainer, 'Client:', clientName);
@@ -40,27 +39,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function populateButtons(contractButtonsContainer) {
-        let buttonGroup = elementMaker(contractButtonsContainer, `div`, `margin-left: 20px`)
-        // let buttonGroup = document.createElement("div");
-        buttonGroup.classList.add('btn-group');
-        buttonGroup.setAttribute('type', 'group');
-        buttonGroup.setAttribute('aria-label', 'Basic example');
-
-
         //Create Buttons
-        let editButton = populateButton(buttonGroup, 'editAssassin.html', 'Edit', '#e59500');
-        let deleteButton = populateButton(buttonGroup, '#', 'Delete', '#830132');
-        let completeButton = populateButton(buttonGroup, '#', 'Complete', '#830132');
+        populateButton(contractButtonsContainer, 'btn-warning', 'editAssassin.html', 'Edit'); //editButton
+        populateButton(contractButtonsContainer, 'btn-danger', '#', 'Delete'); //deleteButton
+        populateButton(contractButtonsContainer, 'btn-success', '#', 'Complete'); //completeButton
     }
 
-    function populateButton(buttonGroup, hrefAddress, innerHTMLText, bgColor) {
-        let editButton = document.createElement('a');
-        editButton.classList.add('btn');
-        editButton.setAttribute('type', 'button');
-        editButton.setAttribute('href', hrefAddress);
-        editButton.innerHTML = innerHTMLText;
-        editButton.style.backgroundColor = bgColor;
-        buttonGroup.append(editButton);
+    function populateButton(buttonGroup, buttonClass, hrefAddress, innerHTMLText) {
+        let button = elementMaker(buttonGroup, 'a', 'buttons');
+        button.classList.add('btn', buttonClass);
+        button.setAttribute('role', 'button');
+        button.setAttribute('href', hrefAddress);
+        button.innerHTML = innerHTMLText;
     }
 
     let link = `http://localhost:8000/contracts`;
@@ -71,13 +61,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             console.log(data);
 
             for (let i = 0; i < data.length; i++) {
-
-                let contractContainer = elementMaker(contractSection, 'section', `display: flex; justify-content: space-between; margin: 40px 0px 60px 0px`);
-                let PicAndInfoContainer = elementMaker(contractContainer, 'section', `display: flex;`);
+                
+                let contractContainer = elementMaker(contractSection, 'section', `mainContainer`); 
+                let PicAndInfoContainer = elementMaker(contractContainer, 'section', `flex`);
                 populateImage(PicAndInfoContainer);
-                contractInfo(PicAndInfoContainer, data[i].target_name_id, data[i].client_id, 'taget_location', data[i].budget, 'securty level');
-                let contractButtonsContainer = elementMaker(contractContainer, `section`, `display: flex; height: 50px`)
+                populateContractInfo(PicAndInfoContainer, data[i].target_name_id, data[i].client_id, 'taget_location', data[i].budget, 'securty level');
+                let contractButtonsContainer = elementMaker(contractContainer, `section`, `btn-container`) 
                 populateButtons(contractButtonsContainer);
             }
         })
 })
+

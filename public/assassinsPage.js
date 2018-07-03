@@ -1,7 +1,38 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     let assassinProfiles = document.getElementById('assassinProfiles');
 
+    function elementMaker(parentElement, elementType, elemClass) {
+        let element = document.createElement(elementType);
+        element.classList.add(elemClass);
+        parentElement.append(element);
+        return element;
+    }
 
+    function populateImage(assassinContainer) {
+        let image = elementMaker(assassinContainer, `img`, `imgSizing`); 
+        image.src = "https://goo.gl/LCquZj";
+        image.alt = "contract1";
+    }
+
+    function populateContractInfo(contractContainer, contractName, clientName, target_location, budget, security_level) {
+        let contractInfoContainer = elementMaker(contractContainer, `section`, `infoContainer`); //infoContainer
+        let contractTitle = elementMaker(contractInfoContainer, `h3`, `infoTitle`);
+        populateContractName(contractTitle, contractName);
+        let statContainer = document.createElement('section');
+        statContainer.style.cssText = `display: flex; flex-wrap: wrap;`;
+
+        populateStat(contractInfoContainer, 'Client:', clientName);
+        populateStat(contractInfoContainer, 'Target Location:', target_location);
+        populateStat(contractInfoContainer, 'Budget:', budget);
+        populateStat(contractInfoContainer, 'Security Level:', security_level);
+    }
+
+    function populateStat(contractInfoContainer, statTitle, stat) {
+        let contractStat = document.createElement('h5');
+        contractStat.innerHTML = statTitle.bold() + ' ' + stat;
+        contractInfoContainer.append(contractStat);
+    }
+    
     function assassinProfileContainer(assassinProfiles) {
         let assassinProfileContainer = document.createElement('section');
         assassinProfileContainer.style.cssText = `display: flex; justify-content: space-between; margin: 40px 0px 60px 0px`;
