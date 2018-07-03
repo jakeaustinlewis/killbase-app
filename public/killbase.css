@@ -144,4 +144,15 @@ body {
 .infoTitle {
     margin-bottom: 15px;
 }
+.statContainer {
+    display: flex; 
+    flex-wrap: wrap;
+}
 
+.ratingAndPriceContainer {
+    margin-right: 80px;
+}
+
+.noClass {
+    position: relative;
+}

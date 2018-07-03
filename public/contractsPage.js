@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         return element;
     }
 
-    function populateImage(contractContainer) {
-        let image = elementMaker(contractContainer, `img`, `imgSizing`); 
+    function populateImage(PicAndInfoContainer) {
+        let image = elementMaker(PicAndInfoContainer, `img`, `imgSizing`); 
         image.src = "https://goo.gl/LCquZj";
         image.alt = "contract1";
     }
 
-    function populateContractInfo(contractContainer, contractName, clientName, target_location, budget, security_level) {
-        let contractInfoContainer = elementMaker(contractContainer, `section`, `infoContainer`); //infoContainer
+    function populateContractInfo(PicAndInfoContainer, contractName, clientName, target_location, budget, security_level) {
+        let contractInfoContainer = elementMaker(PicAndInfoContainer, `section`, `infoContainer`); //infoContainer
         let contractTitle = elementMaker(contractInfoContainer, `h3`, `infoTitle`);
         populateContractName(contractTitle, contractName);
 

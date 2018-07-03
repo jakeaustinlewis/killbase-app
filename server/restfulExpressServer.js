@@ -15,6 +15,9 @@ let targets = require('./routes/targets');
 let contracts = require('./routes/contracts');
 let assassins_contracts = require('./routes/assassins_contracts');
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.disable('x-powered-by'); //Sets the Boolean setting name to false
 
 app.use(function (req, res, next) {
@@ -30,7 +33,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(express.static(path.join('public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(assassins);
 app.use(code_names);
