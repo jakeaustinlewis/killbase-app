@@ -5,7 +5,13 @@ const knex = require('../knex');
 
 router.get('/contracts', (req, res, next) => {
     knex('contracts')
-        .orderBy('id')
+    .select('targets.name as target_name', 'targets.location as target_location', 
+        'targets.security_level as target_security_level', 'targets.target_photo as target_photo', 
+        'contracts.budget as contract_budget', 
+        'clients.name as client_name')
+    .innerJoin('targets', 'contracts.target_name_id', 'targets.id')
+    .innerJoin('clients', 'contracts.client_id', 'clients.id')
+        .orderBy('contracts.id')
         .then((contracts) => {
             res.send(contracts);
         })

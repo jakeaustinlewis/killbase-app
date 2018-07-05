@@ -12,7 +12,9 @@ router.get('/listAssassins', (req, res, next) => {
 
 router.get('/assassins', (req, res, next) => {
     knex('assassins')
-        .orderBy('id')
+    .select('full_name', 'weapon','contact_info', 'age','price', 'rating', 'kills', 'code_name')
+    .innerJoin('code_names', 'assassins.id', 'code_names.assassins_id' )
+        .orderBy('assassins.id')
         .then((assassins) => {
             res.send(assassins);
         })

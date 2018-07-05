@@ -29,15 +29,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         populateStat(killsAndAgeContainer, 'Kills:', kills);
         populateStat(killsAndAgeContainer, 'Age:', age);
 
-        //Adding Weapons and Contacts after the statContainer
         populateStat(assassinInfoContainer, 'Weapon:', weapon);
         populateStat(assassinInfoContainer, 'Contact:', contact_info);
     }
 
     function populateStat(assassinInfoContainer, statTitle, stat) {
-        let assassinStat = document.createElement('h5');
+        let assassinStat = elementMaker(assassinInfoContainer, `h5`, `noClass`);
         assassinStat.innerHTML = statTitle.bold() + ' ' + stat;
-        assassinInfoContainer.append(assassinStat);
     }
 
     function populateAssassinName(contractTitle, contractName) {
@@ -54,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function populateButton(buttonGroup, buttonClass, hrefAddress, innerHTMLText) {
-        let button = elementMaker(buttonGroup, 'a', 'buttons');
+        let button = elementMaker(buttonGroup, 'a','buttons');
         button.classList.add('btn', buttonClass);
         button.setAttribute('role', 'button');
         button.setAttribute('href', hrefAddress);

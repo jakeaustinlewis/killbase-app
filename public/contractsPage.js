@@ -26,9 +26,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function populateStat(contractInfoContainer, statTitle, stat) {
-        let contractStat = document.createElement('h5');
+        let contractStat = elementMaker(contractInfoContainer, `h5`, `noClass`);
         contractStat.innerHTML = statTitle.bold() + ' ' + stat;
-        contractInfoContainer.append(contractStat);
     }
 
     function populateContractName(contractTitle, contractName) {
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     function populateButtons(contractButtonsContainer) {
-        //Create Buttons
         populateButton(contractButtonsContainer, 'btn-warning', 'editAssassin.html', 'Edit'); //editButton
         populateButton(contractButtonsContainer, 'btn-danger', '#', 'Delete'); //deleteButton
         populateButton(contractButtonsContainer, 'btn-success', '#', 'Complete'); //completeButton
@@ -65,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let contractContainer = elementMaker(contractSection, 'section', `mainContainer`); 
                 let PicAndInfoContainer = elementMaker(contractContainer, 'section', `flex`);
                 populateImage(PicAndInfoContainer);
-                populateContractInfo(PicAndInfoContainer, data[i].target_name_id, data[i].client_id, 'taget_location', data[i].budget, 'securty level');
+                populateContractInfo(PicAndInfoContainer, data[i].target_name, data[i].client_name, data[i].target_location, data[i].contract_budget, data[i].target_security_level);
                 let contractButtonsContainer = elementMaker(contractContainer, `section`, `btn-container`) 
                 populateButtons(contractButtonsContainer);
             }
