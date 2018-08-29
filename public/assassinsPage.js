@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function populateAssassinInfo(picAndInfoContainer, assassinName, codeName, rating, price, kills, age, weapon, contact_info) {
         let assassinInfoContainer = elementMaker(picAndInfoContainer, `section`, `infoContainer`);
         let assassinTitle = elementMaker(assassinInfoContainer, `h3`, `infoTitle`);
-        populateAssassinName(assassinTitle, assassinName);
+        populateAssassinName(assassinTitle, assassinName, codeName);
 
         let statContainer = elementMaker(assassinInfoContainer, `section`, `statContainer`);
 
@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         assassinStat.innerHTML = statTitle.bold() + ' ' + stat;
     }
 
-    function populateAssassinName(contractTitle, contractName) {
+    function populateAssassinName(contractTitle, contractName, codeName) {
         if (contractName === null) {
             contractName = 'null';
         };
-        contractTitle.innerHTML = contractName;
+        contractTitle.innerHTML = `${contractName.bold()} (${codeName})`;
     }
 
     function populateButtons(contractButtonsContainer) {
@@ -56,12 +56,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         button.classList.add('btn', buttonClass);
         button.setAttribute('role', 'button');
         button.setAttribute('href', hrefAddress);
-        button.innerHTML = innerHTMLText;
+        button.innerHTML = innerHTMLText.bold();
     }
 
     let link = `http://localhost:8000/assassins`;
 
-    fetch(link)
+    fetch(link, {
+        method: "GET"
+    })
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -71,9 +73,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let picAndInfoContainer = elementMaker(assassinContainer, 'section', `flex`);
 
                 populateImage(picAndInfoContainer);
-                populateAssassinInfo(picAndInfoContainer, data[i].full_name, 'codeName', data[i].rating, data[i].price, data[i].kills, data[i].age, data[i].weapon, data[i].contact_info);
+                populateAssassinInfo(picAndInfoContainer, data[i].full_name, data[i].code_name, data[i].rating, data[i].price, data[i].kills, data[i].age, data[i].weapon, data[i].contact_info);
                 let assassinsButtonsContainer = elementMaker(assassinContainer, `section`, `btn-container`) 
                 populateButtons(assassinsButtonsContainer);
+
             }
         })
 })

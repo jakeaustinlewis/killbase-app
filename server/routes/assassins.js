@@ -17,6 +17,8 @@ router.get('/assassins', (req, res, next) => {
         .orderBy('assassins.id')
         .then((assassins) => {
             res.send(assassins);
+            console.log(assassins);
+            // res.render('assassins', {data: assassins});
         })
         .catch((err) => {
             next(err);
@@ -39,6 +41,7 @@ router.get('/assassins/:id', (req, res, next) => {
 });
 
 router.post('/assassins', (req, res, next) => {
+    console.log('POST assassins req body', req.body);
     knex('assassins')
         .insert({
             full_name: req.body.full_name,
@@ -50,17 +53,28 @@ router.post('/assassins', (req, res, next) => {
             kills: req.body.kills
         }, '*')
         .then((assassins) => {
-            res.send(assassins[0]);
+            // res.send(assassins[0]);
+            let createdAssassin = assassins[0];
+            return knex('code_names')
+            .insert({
+                assassins_id: createdAssassin.id,
+                code_name: req.body.code_name
+            }, '*')
+            .then((code_names) => {
+                res.send(createdAssassin);
+            })
         })
         .catch((err) => {
+            console.error('Creating a new assassin:', err);
             next(err);
         });
 });
 
 router.patch('/assassins/:id', (req, res, next) => {
+    console.log('PATCH assassins req body', req.body);
     knex('assassins')
         .where('id', req.params.id)
-        .first()
+        // .first()
         .then((assassin) => {
             if (!assassin) {
                 return next();
@@ -79,7 +93,13 @@ router.patch('/assassins/:id', (req, res, next) => {
                 .where('id', req.params.id);
         })
         .then((assassins) => {
-            res.send(assassins[0]);
+            let editedAssassin = assassins[0];
+            return knex('code_names')
+                .update({
+                    assassins_id: createdAssassin.id,
+                    code_name: req.body.code_name
+                })
+            res.send(editedAssassin);
         })
         .catch((err) => {
             next(err);

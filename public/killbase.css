@@ -25,6 +25,7 @@ body {
 
 .navBar {
     height:75px;
+    font: "Helvetica Neue";
 }
 
 .navBar > a {
@@ -79,7 +80,7 @@ body {
     width: 80%;
     margin: 30px auto 0px auto;
     padding: 0 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
   /* For devices larger than 550px */
@@ -155,4 +156,18 @@ body {
 
 .noClass {
     position: relative;
+}
+
+.editAndSubmitMargin{
+    margin-top: 20px;
+}
+
+.makeNew {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.makeNew h2 {
+    margin: 15px 0px;
 }

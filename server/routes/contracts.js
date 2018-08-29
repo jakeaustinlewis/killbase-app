@@ -23,7 +23,7 @@ router.get('/contracts', (req, res, next) => {
 router.get('/contracts/:id', (req, res, next) => {
     knex('contracts')
         .where('id', req.params.id)
-        .first()
+        // .first()
         .then((contracts) => {
             if (!contracts) {
                 return next();
@@ -36,6 +36,7 @@ router.get('/contracts/:id', (req, res, next) => {
 });
 
 router.post('/contracts', (req, res, next) => {
+    console.log('POST contracts request:', req.body)
     knex('contracts')
         .insert({
             budget: req.body.budget,

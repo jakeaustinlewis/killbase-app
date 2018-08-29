@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="killbase.css">
 
-
-</head>
-
 </head>
 
 <body class="white-text">
@@ -47,56 +44,56 @@
     </nav>
 
     <main>
-        <section id="assassins-container">
-            <form>
+        <section class="body-container">
+            <form class="editAndSubmitMargin" action="/assassins" method="POST">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputName">Name</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="">
+                        <input type="text" class="form-control" name="full_name" id="inputName" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputAge">Age</label>
-                        <input type="text" class="form-control" id="inputAge" placeholder="">
+                        <input type="text" class="form-control" name="age" id="inputAge" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputCodeNames">Codenames</label>
-                        <input type="text" class="form-control" id="inputCodeNames" placeholder="">
+                        <input type="text" class="form-control" name="code_name" id="inputCodeNames" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputPrice">Price</label>
-                        <input type="text" class="form-control" id="inputPrice" placeholder="">
+                        <input type="text" class="form-control" name="price" id="inputPrice" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputImageURL">Profile Image URL</label>
-                        <input type="text" class="form-control" id="inputImageURL" placeholder="">
+                        <input type="text" class="form-control" name="profile_pic" id="inputImageURL" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputRating">Rating</label>
-                        <input type="password" class="form-control" id="inputRating" placeholder="">
+                        <input type="password" class="form-control" name="rating" id="inputRating" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputWeaponOfChoice">Weapon of Choice</label>
-                        <input type="text" class="form-control" id="inputWeaponOfChoice" placeholder="">
+                        <input type="text" class="form-control" name="weapon" id="inputWeaponOfChoice" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputKills">Kills</label>
-                        <input type="text" class="form-control" id="inputKills" placeholder="">
+                        <input type="text" class="form-control" name="kills" id="inputKills" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputContactInfo">Contact Info</label>
-                        <input type="email" class="form-control" id="inputContactInfo" placeholder="">
+                        <input type="email" class="form-control" name="contact_info" id="inputContactInfo" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
 

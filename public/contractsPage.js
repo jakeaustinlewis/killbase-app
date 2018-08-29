@@ -8,21 +8,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
         return element;
     }
 
-    function populateImage(PicAndInfoContainer) {
+    function populateImage(PicAndInfoContainer, targetPhoto) {
         let image = elementMaker(PicAndInfoContainer, `img`, `imgSizing`); 
-        image.src = "https://goo.gl/LCquZj";
-        image.alt = "contract1";
+        image.src = targetPhoto;
+        image.alt = `contractPhoto`;
     }
 
-    function populateContractInfo(PicAndInfoContainer, contractName, clientName, target_location, budget, security_level) {
+    function populateContractInfo(PicAndInfoContainer, targetName, clientName, targetLocation, budget, securityLevel) {
         let contractInfoContainer = elementMaker(PicAndInfoContainer, `section`, `infoContainer`); //infoContainer
         let contractTitle = elementMaker(contractInfoContainer, `h3`, `infoTitle`);
-        populateContractName(contractTitle, contractName);
+        populateContractName(contractTitle, targetName);
 
         populateStat(contractInfoContainer, 'Client:', clientName);
-        populateStat(contractInfoContainer, 'Target Location:', target_location);
+        populateStat(contractInfoContainer, 'Target Location:', targetLocation);
         populateStat(contractInfoContainer, 'Budget:', budget);
-        populateStat(contractInfoContainer, 'Security Level:', security_level);
+        populateStat(contractInfoContainer, 'Security Level:', securityLevel);
     }
 
     function populateStat(contractInfoContainer, statTitle, stat) {
@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         contractStat.innerHTML = statTitle.bold() + ' ' + stat;
     }
 
-    function populateContractName(contractTitle, contractName) {
-        if (contractName === null) {
-            contractName = 'null';
+    function populateContractName(contractTitle, targetName) {
+        if (targetName === null) {
+            targetName = 'null';
         };
-        contractTitle.innerHTML = contractName;
+        contractTitle.innerHTML = targetName.bold();
     }
 
     function populateButtons(contractButtonsContainer) {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         button.classList.add('btn', buttonClass);
         button.setAttribute('role', 'button');
         button.setAttribute('href', hrefAddress);
-        button.innerHTML = innerHTMLText;
+        button.innerHTML = innerHTMLText.bold();
     }
 
     let link = `http://localhost:8000/contracts`;
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 
                 let contractContainer = elementMaker(contractSection, 'section', `mainContainer`); 
                 let PicAndInfoContainer = elementMaker(contractContainer, 'section', `flex`);
-                populateImage(PicAndInfoContainer);
+                populateImage(PicAndInfoContainer, data[i].target_photo);
                 populateContractInfo(PicAndInfoContainer, data[i].target_name, data[i].client_name, data[i].target_location, data[i].contract_budget, data[i].target_security_level);
                 let contractButtonsContainer = elementMaker(contractContainer, `section`, `btn-container`) 
                 populateButtons(contractButtonsContainer);

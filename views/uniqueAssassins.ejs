@@ -1,3 +1,13 @@
+<!-- <%=      %> = injecting info into page
+<%-      %> - injecting info w/out escaping characters.
+
+
+<%- include('header')%>
+ejs=?
+<section
+
+app.get('/assassins', (req, res)=></section>) -->
+
 <html>
 
 <head>
@@ -5,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Personal Website</title>
-    <script defer src="editAssassin.js"></script>
+    <script defer src="newAssassin.js"></script>
 
     <!-- Compiled and minified CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
@@ -20,10 +30,12 @@
 
 </head>
 
+</head>
+
 <body class="white-text">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2d2d2d;">
         <a class="navbar-brand" href="./index.html">
-            <img src="./logos/killbase_logo.png" width="60" height="60" class="d-inline-block align-top" alt=""> KILLBASE
+            <img src="../logos/killbase_logo.png" width="60" height="60" class="d-inline-block align-top" alt=""> KILLBASE
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -42,60 +54,59 @@
                 </li>
             </ul>
         </div>
-
     </nav>
 
     <main>
-        <section class="body-container">
-            <form class="editAndSubmitMargin" method="POST" action="/assassins/:id?_method=PATCH">
+        <section id="assassins-container">
+            <form>
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputName">Name</label>
-                        <input type="text" class="form-control" name="full_name" id="inputName" placeholder="">
+                        <input type="text" class="form-control" id="inputName" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputAge">Age</label>
-                        <input type="text" class="form-control" id="inputAge" name="age" placeholder="">
+                        <input type="text" class="form-control" id="inputAge" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputCodeNames">Codenames</label>
-                        <input type="text" class="form-control" id="inputCodeNames" name="code_names" placeholder="">
+                        <input type="text" class="form-control" id="inputCodeNames" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputPrice">Price</label>
-                        <input type="text" class="form-control" id="inputPrice" name="price" placeholder="">
+                        <input type="text" class="form-control" id="inputPrice" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputImageURL">Profile Image URL</label>
-                        <input type="text" class="form-control" id="inputImageURL" name="profile_pic" placeholder="">
-                      </div>
+                        <input type="text" class="form-control" id="inputImageURL" placeholder="">
+                    </div>
                     <div class="form-group col-md-2">
                         <label for="inputRating">Rating</label>
-                        <input type="password" class="form-control" id="inputRating" name="rating" placeholder="">
+                        <input type="password" class="form-control" id="inputRating" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputWeaponOfChoice">Weapon of Choice</label>
-                        <input type="text" class="form-control" id="inputWeaponOfChoice" name="weapon" placeholder="">
+                        <input type="text" class="form-control" id="inputWeaponOfChoice" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputKills">Kills</label>
-                        <input type="text" class="form-control" id="inputKills" name="kills" placeholder="">
+                        <input type="text" class="form-control" id="inputKills" placeholder="">
                     </div>
                 </div>
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
                         <label for="inputContactInfo">Contact Info</label>
-                        <input type="email" class="form-control" id="inputContactInfo" name="contact_info" placeholder="">
+                        <input type="email" class="form-control" id="inputContactInfo" placeholder="">
                     </div>
                     <div class="form-group col-md-2">
 
@@ -105,7 +116,7 @@
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-6">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" class="btn btn-primary">Add Assassin</button>
                     </div>
                     <div class="form-group col-md-2">
 
