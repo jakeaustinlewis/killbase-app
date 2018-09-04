@@ -5,7 +5,7 @@
   "main": "restfulExpressServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/restfulExpressServer.js"
+    "start": "node ./restfulExpressServer.js"
   },
   "keywords": [],
   "author": "",
