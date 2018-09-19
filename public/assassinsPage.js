@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         button.innerHTML = innerHTMLText.bold();
     }
 
-    let link = `http://localhost:8000/assassins`;
+    let link = `/assassins`;
 
     fetch(link, {
         method: "GET"

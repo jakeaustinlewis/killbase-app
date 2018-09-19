@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         button.innerHTML = innerHTMLText.bold();
     }
 
-    let link = `http://localhost:8000/contracts`;
+    let link = `/contracts`;
 
     fetch(link)
         .then(response => response.json())
